@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Apply Leave</title>
+  </head>
+  <body>
+    
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>
+      window.onload = init;
+      function init() {
+        var test = document.getElementById("nav-placeholder");
+        var url = "nav.html";
+        load(test, url);
+      }
+      function load(element, url) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", url, true);
+        xhr.send(null);
+        xhr.onreadystatechange = function () {
+          if (this.readyState == 4) {
+            element.innerHTML = this.responseText;
+            document.getElementById("header").innerHTML = "Messages";
+            let sidebar = document.querySelector(".sidebar");
+            let sidebarBtn = document.querySelector(".sidebarBtn");
+            sidebarBtn.onclick = function () {
+              sidebar.classList.toggle("active");
+              if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+              } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            };
+          }
+        };
+      }
+    </script>
+    <!--end of Navigation bar-->
+  </body>
+</html>
