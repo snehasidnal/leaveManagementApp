@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("QAfmWm3f9Jxe4vdGj");
+      })();
+    </script>
+  </head>
+  <body>
+    <input type="text" id="toName" placeholder="toName" />
+    <input type="text" id="fromName" placeholder="fromName" />
+    <input type="text" id="msg" placeholder="Message" />
+    <button onclick="submit()">submit</button>
+    <script>
+      function submit() {
+        var templateParams = {
+            to_name: document.getElementById("toName").value,
+          from_name: document.getElementById("fromName").value,
+          message: document.getElementById("msg").value,
+        };
+
+        emailjs
+          .send("service_it6zytf", "template_cvytyar", templateParams)
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+              window.alert("success");
+            },
+            function (error) {
+              console.log("FAILED...", error);
+              window.alert("error");
+            }
+          );
+      }
+    </script>
+  </body>
+</html>

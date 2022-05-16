@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Apply Leave</title>
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>
+      window.onload = init;
+      function init() {
+        var test = document.getElementById("nav-placeholder");
+        var url = "nav.html";
+        load(test, url);
+      }
+      function load(element, url) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", url, true);
+        xhr.send(null);
+        xhr.onreadystatechange = function () {
+          if (this.readyState == 4) {
+            element.innerHTML = this.responseText;
+            document.getElementById("header").innerHTML = "Leaves History";
+            let sidebar = document.querySelector(".sidebar");
+            let sidebarBtn = document.querySelector(".sidebarBtn");
+            sidebarBtn.onclick = function () {
+              sidebar.classList.toggle("active");
+              if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+              } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            };
+          }
+        };
+      }
+    </script>
+    <!-- https://codepen.io/TurkAysenur/full/ZEpxeYm -->
+    <!-- https://codepen.io/aybukeceylan/full/OJRNbZp -->
+    <!-- google app password : nooseatgqlttjfur -->
+    <!-- sms tocken --- 9be41db95c874e95a91eed191d419339 -->
+    <!--end of Navigation bar-->
+  </body>
+</html>
