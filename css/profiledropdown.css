@@ -28,9 +28,8 @@
   margin-left: 85%;
 } */
 
-.dropdown-content a:hover {
-  background-color: #ddd;
-  border-bottom: rgb(9, 9, 9);
+.dropdown-content .dropdown-content a:hover {
+  background-color: rgb(75, 71, 71);
 }
 
 .dropdown:hover .dropdown-content {display: block;}

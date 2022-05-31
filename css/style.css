@@ -161,14 +161,14 @@ nav .profile-details img{
   border-radius: 400px;
   object-fit: cover;
 }
-/* nav .profile-details .admin_name{
+nav .profile-details .dropdown .admin_name{
   font-size: 15px;
   font-weight: 500;
-  color: #333;
+  color: rgb(15, 13, 13);
   margin: 0 10px;
   white-space: nowrap;
   text-align: center;
-} */
+}
 /* nav .profile-details i{
   font-size: 25px;
   color: rgb(125, 11, 11);
@@ -186,6 +186,16 @@ nav .profile-details img{
   padding: 0 20px;
   margin-bottom: 26px;
 }
+
+.home-content-load .overview-boxes-load{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin-bottom: 26px;
+}
+
 .overview-boxes .box{
   display: flex;
   align-items: center;
@@ -210,12 +220,24 @@ nav .profile-details img{
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
-.overview-boxes .box-welcome  img {
+.overview-boxes .apply_leave {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 0 - 15px);
+  background: #fff;
+  padding: 15px 14px;
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* .overview-boxes .box-welcome  img {
   height: 150px;
   width:150px;
   text-align: center;
   margin-right: 500px;
-}
+} */
 
 .overview-boxes .box-topic-welcome{
   font-size: 20px;
@@ -302,7 +324,7 @@ img:hover {
 
 /* left box */
 .home-content .sales-boxes .recent-sales{
-  width: 50%;
+  width: 60%;
   background: #fff;
   padding: 20px 30px;
   margin: 0 20px;
@@ -354,7 +376,7 @@ img:hover {
 
 /* Right box */
 .home-content .sales-boxes .top-sales{
-  width: 50%;
+  width: 35%;
   background: #fff;
   padding: 20px 30px;
   margin: 0 20px 0 0;
@@ -404,7 +426,7 @@ img:hover {
     left: 60px;
   }
   .sidebar.active ~ .home-section{
-    /* width: calc(100% - 220px); */
+    width: calc(100% - 220px);
     overflow: hidden;
     left: 220px;
   }
@@ -438,7 +460,6 @@ img:hover {
 }
 @media (max-width: 700px) {
   nav .sidebar-button .dashboard,
-  nav .profile-details .admin_name,
   nav .profile-details i{
     display: none;
   }
@@ -459,27 +480,27 @@ img:hover {
     display: none;
   }
 }
-  @media (max-width: 400px) {
-  .sidebar{
+  @media (max-width: 500px) {
+  /* .sidebar{
     width: 0;
   }
   .sidebar.active{
     width: 60px;
-  }
+  } */
   .home-section{
     width: 100%;
     left: 0;
   }
-  .sidebar.active ~ .home-section{
+  /* .sidebar.active ~ .home-section{
     left: 60px;
     width: calc(100% - 60px);
-  }
+  } */
   .home-section nav{
     width: 100%;
     left: 0;
   }
-  .sidebar.active ~ .home-section nav{
+  /* .sidebar.active ~ .home-section nav{
     left: 60px;
     width: calc(100% - 60px);
-  }
+  } */
 }

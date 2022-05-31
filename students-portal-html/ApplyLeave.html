@@ -1,38 +1,278 @@
-<html>
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
   <head>
-    <title>Apply Leave</title>
-  </head>
-  <body>
-    <!--Navigation bar-->
-    <div id="nav-placeholder"></div>
-    <script>
-      window.onload = init;
-      function init() {
-        var test = document.getElementById("nav-placeholder");
-        var url = "nav.html";
-        load(test, url);
-      }
-      function load(element, url) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("get", url, true);
-        xhr.send(null);
-        xhr.onreadystatechange = function () {
-          if (this.readyState == 4) {
-            element.innerHTML = this.responseText;
-            document.getElementById("header").innerHTML = "Apply Leave";
-            let sidebar = document.querySelector(".sidebar");
-            let sidebarBtn = document.querySelector(".sidebarBtn");
-            sidebarBtn.onclick = function () {
-              sidebar.classList.toggle("active");
-              if (sidebar.classList.contains("active")) {
-                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-              } else
-                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-            };
-          }
-        };
-      }
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("QAfmWm3f9Jxe4vdGj");
+      })();
     </script>
-    <!--end of Navigation bar-->
-  </body>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profiledropdown.css">
+    <link rel="stylesheet" href="../css/application.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">LMS</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="admin.html" >
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="ApplyLeave.html">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Apply Leaves</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Order list</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Analytics</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Stock</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-book-alt' ></i>
+            <span class="links_name">Total order</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Team</span>
+          </a>
+        </li>
+        <li>
+          <a href="../students-portal-html/message.html">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-heart' ></i>
+            <span class="links_name">Favrorites</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Setting</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Apply Leaves</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <div class="profile-details">
+        <!-- <img src="../photos/Prathmesh_Photo1.jpg" alt=""> -->
+        <!-- <span class="admin_name">Prem Shahi</span> -->
+        <!-- <i class='bx bx-chevron-down' ></i> -->
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+        
+        <div class="dropdown">
+            <img src="../photos/Prathmesh_Photo1.jpg" alt="">
+          <div class="dropdown-content">
+            <a href="../students-portal-html/message.html"><i class="fa fa-envelope" aria-hidden="true"> </i>  Messages</a>
+            <a href="#"><i class="fa fa-user" aria-hidden="true">  </i>  Account</a>
+            <a href="#"><i class="fa fa-cog" aria-hidden="true">  </i> Settings</a>
+            <a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+          </div>
+      
+        </div>
+        
+
+        <!-- ----------------------------------------------------------------------------------------------------- -->
+      </div>
+    </nav>
+    <!-- <div class="home-content-load">
+      <div class = "overview-boxes-load">
+      <div class="apply_leave">
+      </div>
+      </div>
+      </div> -->
+    <div class="home-content">
+	  <div class = "overview-boxes">
+		<div class="apply_leave">
+				<!-- <div class="right-side">
+            <div class="box-topic-welcome">Welcome Prathamesh</div>
+            <div class="indicator">
+              <span class="text">Information Science and Engineering</span>
+            </div>
+          </div> -->
+          
+          <main>
+            <section class="container" id="container">
+              <form action="/" id="form">
+                <div class="form-control text">
+                  <label for="" class="label">Leave Type</label>
+                  <select class="input" type="text" name="Type Of Leave" id="leaveType" placeholder="First name">
+                    <option value="">--Please choose an option--</option>
+                    <option value="Sick Leave">Sick Leave</option>
+                    <option value="Function Leave">Function Leave</option>
+                    <option value="Function Leave">College Related Leave</option>
+                    <option value="Others">Others</option>
+                  </select>
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <small>Error message</small>
+                </div>
+
+                <div class="form-control text">
+              
+                </div>
+                <div class="form-control text">
+                  <label for="" class="label">From Date</label>
+                  <input class="input" type="date" name="From Date" id="fromDate" placeholder="From Date">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <small>Error message</small>
+                </div>
+               
+          
+                <div class="form-control text">
+                  
+                </div>
+
+                <div class="form-control text">
+                  <label for="" class="label">To Date</label>
+                  <input class="input" type="date" name="To Date" id="toDate" placeholder="To Date">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <small>Error message</small>
+                </div>
+
+                <div class="form-control text">
+                  
+                </div>
+
+                <div class="form-control text">
+                  <label for="" class="label">Approval Faculty</label>
+                  <!-- <input class="input" type="text" name="To Date" id="approvalFaculty" placeholder="To Date"> -->
+                  <select class="input" type="text" name="Type Of Leave" id="approvalFaculty" placeholder="First name">
+                    <option value="">--Please choose an option--</option>
+                    <option value="preeti puranick,prathameshkalburgi@gmail.com">preeti puranick</option>
+                    <option value="PKD">PKD</option>
+                    <option value="Function Leave">College Related Leave</option>
+                    <option value="Others">Others</option>
+                  </select>
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <small>Error message</small>
+                </div>
+
+                <div class="form-control text">
+                  
+                </div>
+
+              
+                <!-- <div class="form-control text">
+                  <label for="" class="label">Country</label>
+                  <input class="input" type="text" name="country" id="contry" placeholder="Country">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control text">
+                  <label for="" class="label">Linkedln Profile</label>
+                  <input class="input" type="text" name="linkedln" id="linkedln" placeholder="Linkedln link">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="form-control text">
+                  <label for="" class="label">Website</label>
+                  <input class="input" type="url" placeholder="Website,  https://example.com" pattern="https://.*" name="website" id="website">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <small>Error message</small>
+                </div> -->
+                <div id="textarea-container">
+                  <textarea name="about" id="reason" cols="30" rows="5" placeholder="Tell why you want Leave..."></textarea>
+                </div>
+          
+                <div class="form-control least">
+                  <label for="cv" id="cv-label">Upload Related Document: (File type <strong>.PDF</strong> only)</label>
+                  <input type="file" id="cv" name="cv" >
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <small>Error message</small>
+                </div>
+          
+                <div class="form-control least">
+                  <input type="checkbox">
+                  <label for="">I agree to Terms & Conditions</label>
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  <small>Error message</small>
+                </div>
+          
+                <button>Submit Application</button>
+              </form>
+            </section>
+          </main>
+      
+		</div>
+	  </div>
+	  
+     
+    </div>
+  </section>
+  <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+  <script src="../firebase-conn/firebaseInitilzation.js"></script>
+  <script src="../js/ApplyLeave.js"></script>
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
 </html>
+
